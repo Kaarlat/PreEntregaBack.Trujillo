@@ -26,9 +26,9 @@ router.get('/:pid', (req, res) => {
 
 //Crear producto
 router.post('/', (req, res) => {
-    const { id, title, description, code, price, stock, category, thumbnails } = req.body;
+    const { id, title, description, code, price, stock, category } = req.body;
 
-    if (!id || !title || !description || !code || price === undefined || stock === undefined || !category) {
+    if (!id || !title || !description || !code || price || stock === undefined || !category) {
         return res.status(400).send({ error: 'Faltan campos requeridos' });
     }
 
